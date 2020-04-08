@@ -1,0 +1,244 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IDDTV - La Se&ntilde;al de Bendicion</title>
+
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<style type="text/css">
+
+body {
+	font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+	color: #669;
+	texto-decoration: none;
+}
+a:hover {
+	texto-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+ESTRUCTURA
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+#header {
+	height: 180px;
+}
+#content {
+    padding: 5px;
+	width: 100%;
+	float: center;
+}
+#sidebar {
+	width: 300px;
+	float: right;
+}
+#footer {
+	width: 100%;
+	float: center;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* para 980px o menos */
+@media screen and (max-width: 980px) {
+	
+	#pagewrap {
+		width: 94%;
+	}
+	#content {
+		width: 100%;
+		height:480;
+	}
+	#sidebar {
+		width: 30%;
+	}
+#.recuadro{
+width:300px;
+height:200px;
+overflow: scroll;
+}
+
+
+}
+
+/* para 700px o menos */
+@media screen and (max-width: 700px) {
+
+	#content {
+		width: auto;
+		float: none;
+	}
+	#sidebar {
+		width: auto;
+		float: none;
+	}
+
+}
+
+/* para 480px o menos */
+@media screen and (max-width: 480px) {
+
+	#header {
+		height: auto;
+	
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#sidebar {
+		display: none;
+	}
+
+}
+
+/* borde & guideline (puedes ignorarlo) */
+#content {
+	background: #333333
+}
+#sidebar {
+	background: #f0efef;
+}
+#header, #content, #sidebar {
+	margin-bottom: 5px;
+}
+#pagewrap, #header, #content, #sidebar, #footer {
+	border: #FFFFFF;
+}
+
+.Estilo1 {color: #FFFFFF}
+.Estilo3 {font-size: 18px}
+.Estilo4 {color: #000000}
+</style>
+<script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    __insertDappDetected()
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script></head>
+
+<body>
+
+<div id="pagewrap" align="center">
+
+  <div id="header">
+	  <h1><img src="LOGO  copia.png" alt="IDDTV" width="483" height="113"> <span class="Estilo1">aaa</span> <span class="Estilo3"><a href="Index.html" class="Estilo4">INICIO</a> | PROGRAMACION</span> </h1>
+	</div>
+
+	<div id="content">
+		<table width="100%" height="470"  border="0" align="center">
+          <tr>
+            <td><iframe src="http://iblups.com/e_IDDTBZ" width=100% height=450 scrolling="no" align="middle" allowtransparency="1" frameborder="0" allow="autoplay; fullscreen"> </iframe> 
+
+			</td>
+          </tr>
+      </table>
+		
+  </div>
+
+<div id="footer">
+<table width="100%" border="0">
+  <tr>
+    <td width="24%"><img src="90791570_219173036108440_2212995879382548480_o.jpg" alt="LOGO" width="219" height="200"></td>
+    <td width="76%"><img src="92353914_229959575029786_4441243496870838272_o.jpg" alt="INFORMACION " width="100%" height="200"></td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr>
+    <td width="24%">
+	<H3>PROXIMO EN VIVO EN:</H3>
+	<div id="countdown"></div>
+<script>
+var end = new Date('04/12/2020 5:00 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('countdown').innerHTML = days + ' dias, ';
+        document.getElementById('countdown').innerHTML += hours + ' horas, ';
+        document.getElementById('countdown').innerHTML += minutes + ' minutos y ';
+        document.getElementById('countdown').innerHTML += seconds + ' segundos';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script></td>
+    <td width="38%">&nbsp;</td>
+    <td width="38%"><img src="siguenos-en-facebook-home.png" alt="fanpage" width="197" height="108" border="0"></td>
+    <td width="76%">&nbsp;</td>
+  </tr>
+</table>
+		<marquee style="border: #FFFFFF 2px SOLID">Bienvenid@s a Iglesia de Dios Television en donde podras escuchar Palabra de Dios   -    Transmisionesen Vivo en nuestra Fanpage Dias: Lunes, Martes y Domingos a las 5:00 pm</marquee>
+		
+  </div>
+
+
+</div>
+</body></html>
